@@ -7,7 +7,51 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.EntryForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.input--name {
+  margin-inline: 0.5em;
+}
+
+.input--phone-number {
+  margin-inline: 0.5em;
+}
+
+.button--submit {
+  margin-inline: 0.5em;
+}
+
+.entry-list {
+  width: 100%;
+  padding-inline: 2em;
+  padding-top: 2em;
+  border: 0.5em solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.Entry {
+  margin-bottom: 2em;
+}
+
+.entry--name {
+  margin: 0;
+}
+
+.entry--phone-number {
+  margin: 0;
 }
