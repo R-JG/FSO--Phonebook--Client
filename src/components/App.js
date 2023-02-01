@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import EntryForm from './EntryForm';
 import SearchForm from './SearchForm';
 import Entry from './Entry';
+import phonebookServices from '../services/phonebook';
 
 const App = () => {
 
-    const [ phonebookData, setPhonebookData ] = useState([]);
+    const [ phonebookData, setPhonebookData ] = useState(null);
     const [ showAll, setShowAll ] = useState(false);
     const [ searchInputData, setSearchInputData ] = useState('');
     const [ formData, setFormData ] = useState({ 
         name: '', phoneNumber: '' 
     });
+
+    useEffect(() => {
+        phonebookServices
+            .getAll()
+            .then(responseData => setPhonebookData(responseData));
+    }, []);
+
+    if (!phonebookData) return console.log('fetching data from server...');
 
     const updateFormProperty = (key, value) => {
         setFormData({
@@ -36,12 +45,15 @@ const App = () => {
 
     const filterPhonebookData = () => {
         if (searchInputData === '') return [];
-        return phonebookData.filter(entry => 
-            entry.name.startsWith(searchInputData) 
-            || entry.phoneNumber.startsWith(searchInputData));
+        return phonebookData.filter(entry => {
+            const search = searchInputData.toLowerCase();
+            const name = entry.name.toLowerCase();
+            return (name.startsWith(search) 
+            || entry.phoneNumber.startsWith(searchInputData))
+        });
     };
 
-    const phonebookDisplayData = (showAll 
+    const phonebookDisplayData = ((showAll) 
         ? phonebookData 
         : filterPhonebookData()
     );
