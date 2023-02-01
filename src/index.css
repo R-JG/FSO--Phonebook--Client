@@ -7,6 +7,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button {
+  font-weight: 700;
+  background-color: transparent;
+  border: 0.2em solid black;
+  cursor: pointer;
+}
+
+button:hover {
+  color: sandybrown;
+  border-color: sandybrown;
+}
+
+button:active {
+  filter: brightness(1.25);
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -14,7 +30,39 @@ body {
   align-items: center;
 }
 
+.header {
+  background-color: sandybrown;
+  width: 20vw;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header--title {
+  margin: 0;
+  margin-top: 1em;
+}
+
+.header--divider {
+  width: 110%;
+  margin-bottom: 1em;
+  border: 0.3em solid black;
+}
+
+.main-container {
+  background-color: blanchedalmond;
+  box-sizing: border-box;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .EntryForm {
+  margin-top: 1em;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -33,19 +81,41 @@ body {
   margin-inline: 0.5em;
 }
 
+.button--show-all {
+  margin-left: 0.5em;
+}
+
+.button--show-all--active {
+  background-color: sandybrown;
+}
+
+.button--show-all--active:hover {
+  color: black;
+  border-color: black;
+}
+
+.SearchForm {
+  margin-top: 1em;
+  margin-inline: 1em;
+  align-self: flex-end;
+}
+
 .entry-list {
+  min-height: 10em;
+  max-height: 25em;
   width: 100%;
   padding-inline: 2em;
-  padding-top: 2em;
   border: 0.5em solid black;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  overflow: scroll;
 }
 
 .Entry {
   margin-bottom: 2em;
+  margin-left: 2em;
 }
 
 .entry--name {

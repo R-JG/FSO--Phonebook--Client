@@ -33,6 +33,7 @@ const EntryForm = ({
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
+        if (formData.name === '' || formData.phoneNumber === '') return;
         addEntry();
         setFormData({ 
             name: '', phoneNumber: '' 
