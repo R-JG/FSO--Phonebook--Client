@@ -26,13 +26,13 @@ const App = () => {
         setPhonebookData(phonebookData.concat(formData));
     };
 
-    /*
+    
     const deleteEntry = phoneNumber => {
         setPhonebookData(phonebookData.filter(entry => 
             entry.phoneNumber !== phoneNumber
         ));
     };
-    */
+    
 
     const filterPhonebookData = () => {
         if (searchInputData === '') return [];
@@ -71,6 +71,7 @@ const App = () => {
                             key={entry.name + entry.phoneNumber} 
                             name={entry.name} 
                             phoneNumber={entry.phoneNumber}
+                            deleteEntry={deleteEntry}
                         />)}
                 </ul>
             </main>

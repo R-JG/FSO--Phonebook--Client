@@ -13,12 +13,6 @@ const SearchForm = ({
 
     return (
         <div className='SearchForm' >
-            {!showAll && <input 
-                className='input--search'
-                type='text'
-                value={searchInputData}
-                onChange={handleSearchInput} 
-            />}
             <button 
                 className={
                     `button--show-all 
@@ -26,6 +20,12 @@ const SearchForm = ({
                 onClick={() => setShowAll(!showAll)} >
                 Show All
             </button>
+            {!showAll && <input 
+                className='input--search'
+                type='text'
+                value={searchInputData}
+                onChange={handleSearchInput} 
+            />}
         </div>
     );
 };

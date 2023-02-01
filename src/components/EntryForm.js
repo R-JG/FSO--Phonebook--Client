@@ -47,6 +47,7 @@ const EntryForm = ({
             <input 
                 className='input--name'
                 type='text'
+                placeholder='name'
                 value={formData.name}
                 onChange={handleNameInput}
             />

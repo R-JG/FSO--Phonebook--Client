@@ -81,8 +81,16 @@ button:active {
   margin-inline: 0.5em;
 }
 
+.SearchForm {
+  margin-top: 1em;
+  margin-inline: 1em;
+}
+
 .button--show-all {
+  margin-top: 0.5em;
   margin-left: 0.5em;
+  margin-right: 1em;
+  margin-bottom: 1.5em;
 }
 
 .button--show-all--active {
@@ -92,12 +100,6 @@ button:active {
 .button--show-all--active:hover {
   color: black;
   border-color: black;
-}
-
-.SearchForm {
-  margin-top: 1em;
-  margin-inline: 1em;
-  align-self: flex-end;
 }
 
 .entry-list {
@@ -114,8 +116,20 @@ button:active {
 }
 
 .Entry {
+  width: 91%;
   margin-bottom: 2em;
   margin-left: 2em;
+}
+
+.button--delete {
+  align-self: flex-end;
+}
+
+.entry--container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .entry--name {
@@ -124,4 +138,10 @@ button:active {
 
 .entry--phone-number {
   margin: 0;
+}
+
+.entry--divider {
+  box-sizing: border-box;
+  width: 100%;
+  border: 0.08em solid black;
 }
