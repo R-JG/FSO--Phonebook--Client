@@ -32,16 +32,22 @@ const App = () => {
         if (phonebookData.some(entry => 
             (entry.phoneNumber === formData.phoneNumber))
         ) return alert('This phone number already exists in the phonebook.');
-        setPhonebookData(phonebookData.concat(formData));
+        phonebookServices
+            .createEntry(formData)
+            .then(responseData => {
+                setPhonebookData(phonebookData.concat(responseData));
+            });
     };
 
-    
     const deleteEntry = phoneNumber => {
-        setPhonebookData(phonebookData.filter(entry => 
-            entry.phoneNumber !== phoneNumber
-        ));
+        phonebookServices
+            .deleteEntry(phoneNumber)
+            .then(responsePhoneNumber => {
+                setPhonebookData(phonebookData.filter(entry => 
+                    entry.phoneNumber !== responsePhoneNumber
+                ));
+            });
     };
-    
 
     const filterPhonebookData = () => {
         if (searchInputData === '') return [];
