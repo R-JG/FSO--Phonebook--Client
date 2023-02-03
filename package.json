@@ -1,5 +1,5 @@
 {
-  "name": "part_2_phonebook",
+  "name": "phonebook_client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
